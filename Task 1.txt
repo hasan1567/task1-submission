@@ -1,0 +1,51 @@
+====================================
+Cybersecurity Internship – Task 1 Report
+====================================
+
+🔒 Task Title: Security Assessment of a Mock User Management System
+
+🗓️ Week: 1  
+🎯 Objective: To perform a basic security assessment of a vulnerable web application and document the findings using automated scanning tools.
+
+---
+
+🔧 Tools & Technologies Utilized:
+- DVWA (Damn Vulnerable Web Application)
+- OWASP ZAP (Zed Attack Proxy)
+- Firefox Browser
+- Linux Terminal (Ubuntu)
+- Apache2 & MariaDB Services
+
+---
+
+📝 Step-by-Step Execution:
+
+1. **Environment Setup**
+   - Started essential services: Apache2 and MariaDB.
+   - Accessed DVWA at `http://localhost/DVWA`.
+   - Logged in with default credentials:
+     - **Username**: admin  
+     - **Password**: password
+   - Set DVWA security level to **Low** for the initial assessment.
+
+2. **Vulnerability Scanning**
+   - Executed OWASP ZAP in command-line mode:
+     ```
+     zaproxy -cmd -quickurl http://localhost/DVWA -quickout ~/zap_report.html
+     ```
+   - The generated scan report was opened and reviewed via browser.
+   - Report was saved and backed up in a timestamped folder for documentation purposes.
+
+---
+
+📊 Key Findings:
+
+During the vulnerability assessment of the DVWA application using OWASP ZAP, several security concerns were identified. The majority of issues were categorized under Medium and Low severity, including missing HTTP security headers, directory browsing, and cookie misconfigurations. These findings indicate areas where the application can be further hardened to prevent common attack vectors such as clickjacking, information leakage, and cookie-based attacks. Overall, the system is functioning without critical vulnerabilities, but improvements in basic security hygiene are recommended.
+
+---
+
+📌 Conclusion:
+
+The automated scan of the DVWA application provided valuable insights into its current security posture. While no high-risk vulnerabilities were discovered, the presence of medium and low-level issues highlights the importance of implementing standard security best practices. Addressing these vulnerabilities will significantly reduce the application's exposure to common threats and enhance its overall resilience. The assessment successfully achieved its objective of identifying core areas for security enhancement.
+
+✅ Task 1 Completed
